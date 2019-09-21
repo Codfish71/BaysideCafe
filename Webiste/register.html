@@ -4,6 +4,22 @@
 	<title>Bayside Cafe	</title>
 	<link rel="stylesheet" type="text/css" href="CSS/style1.css">
 	<link href="https://fonts.googleapis.com/css?family=Flamenco&display=swap" rel="stylesheet">
+	<script type="text/javascript">
+		function validate()
+		{
+			var username = document.getElementById("name");
+			var password = document.getElementById("pass");
+			if (username.value.trim() == "" || password.value.trim() == "")
+			{
+				alert("no blank values allowed");
+				return false;
+			}
+			else 
+			{
+				return true;
+			}
+		}
+	</script>
 </head>
 <body>
 
@@ -15,13 +31,13 @@
 		</nav>
 
 	<div class="login-page">
-		<div class="form">
-			<input type="text" placeholder="name">
-			<input type="text" placeholder="password">
-			<input type="text" placeholder="email">
-			<button>Register</button>
+		<form onsubmit = "return validate()" action="index.html">
+			<input type="text" placeholder="name" id="name">
+			<input type="text" placeholder="password" id="pass">
+			<input type="text" placeholder="email" id="email">
+			<button onclick="validate()" type="submit">Register</button>
 			<p class="message">Already registered ?<a href="login.html">Login</a></p>
-		</div>
+		</form>
 	</div>
 </body>
 </html>
